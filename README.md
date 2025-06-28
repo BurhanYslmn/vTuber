@@ -7,96 +7,47 @@ It is OBS-compatible and thanks to Electron, it continues to respond even in the
 
 ## 🧩 Features
 
-- 🎤 Microphone detection
-- 👄 2D character mouth animation when speaking
-- 🖥️ Transparent window (perfect for OBS)
-- 💤 Stays idle while silent, animates on sound
-- 🔊 Keeps working even when window is not focused
+- 🎤 Microphone detection  
+- 👄 2D character mouth animation when speaking  
+- 🖥️ Transparent window (perfect for OBS)  
+- 💤 Stays idle while silent, animates on sound  
+- 🔊 Keeps working even when window is not focused  
 
 ---
 
 ## 🔧 Installation
 
-1. Download or clone this project  
-2. Open terminal and go to the folder:
-   ```bash
-   npm install
+> 💡 To run this project, install [Node.js](https://nodejs.org) (LTS version).  
+Then in the terminal, run:
 
-3. Then Start the app:
-
+```bash
+npm install
 npm start
+Alternatively, just double-click:
 
-Alternatively, just double-click vtuber.bat to launch.
-
+bash
+Kopyala
+Düzenle
+vtuber.bat
 🖼️ Customize Your Character
-To use your own character, just replace these two images:
+Replace the two images with your own:
 
-- idle.png — Normal (mouth closed)
-
-- talking.png — Talking (mouth open)
-
-You can draw your own or generate them with online tools.
+plaintext
+Kopyala
+Düzenle
+idle.png     →  Normal face (mouth closed)  
+talking.png  →  Talking face (mouth open)
+You can draw your own or create them online (e.g. Charat, Picrew).
 
 📺 How to Use with OBS
-Run the app
+Launch the app
 
-In OBS, add a "Window Capture" source
+Open OBS and add a Window Capture source
 
-Select the Electron VTuber window
+Select the VTuber Electron window
 
-Enable "Allow transparency"
-
-That’s it — your character will now animate based on your voice! 🎉
+Check “Allow transparency” box ✅
 
 📄 License
 This project is licensed under the MIT License.
 You are free to use, modify, distribute, and share it — no restrictions ✅
-
-# 🎙️ VTuber Electron App
-
-Bu proje, mikrofonla ses algılayarak konuşma esnasında ağzı oynayan basit bir PNGTuber uygulamasıdır.  
-OBS ile uyumlu çalışır ve Electron sayesinde arka planda bile tepki verir.
-
----
-
-## 🧩 Özellikler
-
-- 🎤 Mikrofon algılama
-- 👄 Konuşunca ağzı oynayan 2D karakter
-- 🖥️ Şeffaf pencere (OBS için uygun)
-- 💤 Sessizken durur, konuşunca hareket eder
-- 🔊 Arka planda çalışmayı destekler
-
----
-
-## 🔧 Kurulum
-
-1. Bu projeyi indir / klonla
-2. Terminalde klasöre gir:
-   
-bash
-   npm install
-3. Çalıştırmak için
-npm start
-
-Alternatif olarak vtuber.bat dosyasına çift tıklayarak da çalıştırabilirsin.
-
-Kendi karakterini Yerleştirmek için sadece Alttaki 2 dosyayı değiştir.
-
-idle.png — Karakterin normal hali
-talking.png — Konuşurkenki hali
-
-Görselleri sen oluşturabilir veya örneklerle değiştirebilirsin.
-
-📺 OBS Kullanımı
-1. Uygulamayı çalıştır
-
-2. OBS'de "Pencere Yakalama (Window Capture)" kaynağı ekle
-
-3. Electron uygulamasını seç
-
-4. "Şeffaflığı destekle" kutusunu işaretle
-
-📄 Lisans
-Bu proje MIT Lisansı ile lisanslanmıştır.
-İsteyen herkes kullanabilir, geliştirebilir, paylaşabilir ✅
