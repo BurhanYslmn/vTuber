@@ -23,31 +23,28 @@ Then in the terminal, run:
 ```bash
 npm install
 npm start
-Alternatively, just double-click:
+You can also run it using the batch file:
 
 bash
 Kopyala
 Düzenle
 vtuber.bat
 🖼️ Customize Your Character
-Replace the two images with your own:
+Replace the following files with your own:
 
-plaintext
-Kopyala
-Düzenle
-idle.png     →  Normal face (mouth closed)  
-talking.png  →  Talking face (mouth open)
-You can draw your own or create them online (e.g. Charat, Picrew).
+- idle.png → Normal face (closed mouth)
+
+- talking.png → Talking face (open mouth)
 
 📺 How to Use with OBS
-Launch the app
+1. Launch the app
 
-Open OBS and add a Window Capture source
+2. Open OBS → Add a Window Capture source
 
-Select the VTuber Electron window
+3. Select the VTuber window
 
-Check “Allow transparency” box ✅
+4. Enable “Allow transparency”
 
 📄 License
-This project is licensed under the MIT License.
-You are free to use, modify, distribute, and share it — no restrictions ✅
+Licensed under the MIT License ✅
+You are free to use, modify, and share this project.
