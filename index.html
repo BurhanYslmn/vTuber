@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VTuber</title>
+  <style>
+    html, body {
+      margin: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 90vh;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <img id="idle" src="idle.png" />
+  <img id="talking" src="talking.png" style="display: none;" />
+
+  <script>
+    const idle = document.getElementById("idle");
+    const talking = document.getElementById("talking");
+
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const source = audioCtx.createMediaStreamSource(stream);
+      const analyser = audioCtx.createAnalyser();
+      analyser.fftSize = 512;
+      const data = new Uint8Array(analyser.frequencyBinCount);
+
+      source.connect(analyser);
+
+      let silenceThreshold = 15;
+      let speaking = false;
+      let silenceCounter = 0;
+
+      // Arka planda da çalışsın diye requestAnimationFrame yerine setInterval kullanılıyor
+      setInterval(() => {
+        analyser.getByteFrequencyData(data);
+        const volume = data.reduce((a, b) => a + b, 0) / data.length;
+
+        if (volume > silenceThreshold) {
+          if (!speaking) {
+            idle.style.display = "none";
+            talking.style.display = "block";
+            speaking = true;
+          }
+          silenceCounter = 0;
+        } else {
+          silenceCounter++;
+          if (silenceCounter > 3 && speaking) {
+            idle.style.display = "block";
+            talking.style.display = "none";
+            speaking = false;
+          }
+        }
+      }, 60);
+    }).catch(err => {
+      alert("Mikrofon izni reddedildi. Lütfen mikrofon izni ver.");
+      console.error(err);
+    });
+  </script>
+</body>
+</html>
